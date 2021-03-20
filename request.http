@@ -1,0 +1,49 @@
+POST  http://35.236.179.186/Sql/Query
+Content-Type: application/json
+
+{
+    "sql": "SELECT table_name FROM information_schema.tables" 
+}
+
+###
+
+POST  https://localhost:5001/Sql/Query
+Content-Type: application/json
+
+{
+    "sql": "SELECT table_name FROM information_schema.tables" 
+}
+
+###
+# 綜合損益表
+POST  https://mops.twse.com.tw/mops/web/ajax_t163sb04
+Content-Type: application/x-www-form-urlencoded
+
+data: encodeURIComponent=1&step=1&firstin=1&off=1&isQuery=Y&TYPEK=sii&year=108&season=1
+
+###
+# 資產負債表
+POST  https://mops.twse.com.tw/mops/web/ajax_t163sb05
+Content-Type: application/x-www-form-urlencoded
+
+data: encodeURIComponent=1&step=1&firstin=1&off=1&isQuery=Y&TYPEK=sii&year=108&season=02
+
+### Slack
+
+POST https://hooks.slack.com/services/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
+Content-Type: application/json
+
+{"text": "測試傳資料123"}
+
+
+### 股權分散表-日期
+POST https://www.tdcc.com.tw/smWeb/QryStockAjax.do
+Content-Type: application/x-www-form-urlencoded;charset=UTF-8
+
+data: REQ_OPR=qrySelScaDates
+
+### 股權分散表-資料
+POST https://www.tdcc.com.tw/smWeb/QryStockAjax.do
+Content-Type: application/x-www-form-urlencoded
+
+data: scaDates=20190607&scaDate=20190607&SqlMethod=StockNo&StockNo=0050&radioStockNo=0050&StockName=&REQ_OPR=SELECT&clkStockNo=0050&clkStockName=
